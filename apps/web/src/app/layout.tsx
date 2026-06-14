@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: {
-    default: "Versewell — Tools Built for Ministry",
     template: "%s | Versewell",
+    default: "Versewell — Powerful tools built for ministry",
   },
   description:
-    "Versewell builds powerful, beautiful tools for the modern church — from sermon presentation to deep Bible study.",
-  metadataBase: new URL("https://versewell.io"),
+    "Versewell builds beautifully designed tools for ministry and Bible study. SermonFlow for sermon preparation and presentation. Versewell Study for deep Scripture engagement.",
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://versewell.io",
     siteName: "Versewell",
+    url: "https://versewell.io",
   },
 };
 
@@ -23,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">{children}</body>
+    <html lang="en" className={inter.variable}>
+      <body className="bg-white text-gray-900 antialiased">{children}</body>
     </html>
   );
 }

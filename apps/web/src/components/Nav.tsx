@@ -2,49 +2,42 @@ import Link from "next/link";
 
 export default function Nav() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-navy-900/95 backdrop-blur-sm border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gold-500 flex items-center justify-center">
-              <span className="text-navy-900 font-bold text-sm">V</span>
-            </div>
-            <span className="text-white font-semibold text-lg tracking-tight">
-              Versewell
-            </span>
+    <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-navy-950/90 backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+        <Link href="/" className="flex items-center gap-2">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gold-500">
+            <span className="text-sm font-bold text-navy-950">V</span>
+          </div>
+          <span className="text-lg font-bold text-white">Versewell</span>
+        </Link>
+
+        <nav className="hidden items-center gap-8 md:flex">
+          <Link
+            href="/presenter"
+            className="text-sm text-white/70 transition-colors hover:text-white"
+          >
+            SermonFlow
           </Link>
+          <Link
+            href="/study"
+            className="text-sm text-white/70 transition-colors hover:text-white"
+          >
+            Study
+          </Link>
+        </nav>
 
-          <div className="hidden md:flex items-center gap-8">
-            <Link
-              href="/presenter"
-              className="text-white/70 hover:text-white text-sm font-medium transition-colors"
-            >
-              SermonFlow
-            </Link>
-            <Link
-              href="/study"
-              className="text-white/70 hover:text-white text-sm font-medium transition-colors"
-            >
-              Study
-            </Link>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Link
-              href="/presenter"
-              className="hidden md:inline-flex items-center px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition-colors"
-            >
-              Sign in
-            </Link>
-            <Link
-              href="/presenter"
-              className="inline-flex items-center px-4 py-2 rounded-lg bg-gold-500 hover:bg-gold-400 text-navy-900 text-sm font-semibold transition-colors"
-            >
-              Get started
-            </Link>
-          </div>
+        <div className="flex items-center gap-3">
+          <Link
+            href="/presenter"
+            className="hidden text-sm text-white/70 transition-colors hover:text-white md:block"
+          >
+            Sign in
+          </Link>
+          <Link href="/presenter" className="btn-primary py-2 text-xs">
+            Get started
+          </Link>
         </div>
       </div>
-    </nav>
+    </header>
   );
 }

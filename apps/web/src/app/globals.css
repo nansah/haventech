@@ -2,25 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@layer base {
+  :root {
+    --navy: #0F1B2D;
+    --gold: #F59E0B;
+  }
 
-:root {
-  --navy-900: #0F1B2D;
-  --gold-500: #F59E0B;
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
-}
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-gold-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-all hover:bg-gold-400 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-2;
+  }
 
-body {
-  background-color: #ffffff;
-  color: #0F1B2D;
-  font-family: 'Inter', system-ui, sans-serif;
-}
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .section-label {
+    @apply text-xs font-bold uppercase tracking-widest text-gold-500;
   }
 }
