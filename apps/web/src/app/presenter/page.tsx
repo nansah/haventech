@@ -1,214 +1,134 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "SermonFlow — Craft and Present Sermons with Confidence",
   description:
-    "SermonFlow is a complete sermon preparation and presentation platform for pastors and church leaders. Build outlines, integrate scripture, and deliver with a distraction-free teleprompter.",
+    "SermonFlow is the sermon preparation and presentation tool built for pastors. Outline builder, teleprompter, scripture integration, and live presentation mode.",
 };
 
 const features = [
   {
-    title: "Outline Builder",
+    icon: "❖",
+    title: "Sermon Outline Builder",
     description:
-      "Build structured sermon outlines with drag-and-drop ease. Organize your points, subpoints, and illustrations in a clean, focused editor.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 10h16M4 14h10M4 18h6" />
-      </svg>
-    ),
+      "Structure your message with an intuitive drag-and-drop outline builder. Organize points, sub-points, and illustrations in a clean, focused workspace that keeps your train of thought clear from start to finish.",
   },
   {
-    title: "Teleprompter Mode",
+    icon: "◎",
+    title: "Presentation Mode & Teleprompter",
     description:
-      "Deliver your message with confidence. A distraction-free, scrolling presentation view keeps your notes front and center on any screen.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
+      "Deliver with confidence. SermonFlow's full-screen presentation mode displays your notes at a readable pace, with an integrated teleprompter so you can maintain eye contact while staying on message.",
   },
   {
+    icon: "✦",
     title: "Scripture Integration",
     description:
-      "Search and insert Bible verses inline as you write. Supports multiple translations — scripture fits naturally into your sermon flow.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-      </svg>
-    ),
+      "Search and insert Bible passages from multiple translations inline as you write. Verses flow naturally into your outline with proper attribution, so you're never copying and pasting from another tab.",
   },
   {
+    icon: "◈",
     title: "Notes & Annotations",
     description:
-      "Add speaker notes, reminders, and personal annotations to any section. Your private notes stay private — never visible to the audience.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Sermon Library",
-    description:
-      "Every sermon you write is saved, searchable, and ready to revisit. Build a library of your ministry's messages over time.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-      </svg>
-    ),
-  },
-  {
-    title: "Offline-Ready",
-    description:
-      "Sunday morning is not the time for connectivity issues. SermonFlow works offline so your presentation never depends on Wi-Fi.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-    ),
+      "Add private notes, delivery cues, and timing markers to any section. Highlight key phrases, add speaker notes visible only to you, and build a living document that improves with every message.",
   },
 ];
 
 const steps = [
   {
     step: "01",
-    title: "Build your outline",
-    description:
-      "Start from a blank canvas or a template. Add your sermon title, main points, supporting scripture, and illustrations in a structured outline editor.",
+    title: "Start your outline",
+    body: "Open a new sermon, set your passage and title, and begin building your structure. SermonFlow's blank canvas keeps distractions away.",
   },
   {
     step: "02",
-    title: "Refine and annotate",
-    description:
-      "Add private speaker notes to each section. Search and embed scripture inline. Rearrange sections until the flow feels right.",
+    title: "Write and develop",
+    body: "Flesh out each point with scripture, illustrations, and your own words. The integrated Bible search means you never leave the page.",
   },
   {
     step: "03",
+    title: "Rehearse and refine",
+    body: "Use presentation preview to walk through your message before Sunday. Adjust timing, add delivery notes, and feel fully prepared.",
+  },
+  {
+    step: "04",
     title: "Present with confidence",
-    description:
-      "Switch to Teleprompter Mode when you step on stage. Your outline scrolls smoothly — you stay focused on your congregation, not your notes.",
+    body: "Launch presentation mode on Sunday morning. Your full outline and teleprompter are ready. Focus on your congregation, not your screen.",
   },
 ];
 
 export default function PresenterPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-navy-950">
       <Nav />
 
       {/* Hero */}
-      <section className="relative bg-navy-900 pt-32 pb-24 overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-gold-500/5 blur-3xl" />
+      <section className="relative overflow-hidden px-6 pb-24 pt-32 text-center">
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+          <div className="h-[500px] w-[800px] rounded-full bg-blue-500/5 blur-[120px]" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 text-white/40 hover:text-white/70 text-sm mb-8 transition-colors"
+        <div className="relative z-10 mx-auto max-w-4xl">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2">
+            <div className="flex h-5 w-5 items-center justify-center rounded bg-blue-500 text-xs font-bold text-white">
+              S
+            </div>
+            <span className="text-xs font-semibold text-blue-400 uppercase tracking-wider">
+              SermonFlow by Versewell
+            </span>
+          </div>
+
+          <h1 className="mb-6 text-5xl font-bold leading-tight text-white md:text-7xl">
+            Craft and present sermons{" "}
+            <span className="text-blue-400">with confidence</span>
+          </h1>
+
+          <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-white/60">
+            SermonFlow is the end-to-end sermon workspace for pastors and
+            teachers — from the first outline to the final amen. Prepare
+            clearly, present boldly.
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="https://presenter.versewell.io"
+              className="btn-primary px-8 py-3 text-sm"
             >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-              </svg>
-              Versewell
+              Go to App →
+            </a>
+            <Link href="/" className="btn-secondary px-8 py-3 text-sm">
+              ← Back to Versewell
             </Link>
-
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/20 mb-6">
-              <div className="w-1.5 h-1.5 rounded-full bg-gold-500" />
-              <span className="text-gold-500 text-xs font-semibold uppercase tracking-wider">
-                SermonFlow
-              </span>
-            </div>
-
-            <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
-              Craft and present
-              <br />
-              <span className="text-gold-500">sermons with confidence</span>
-            </h1>
-
-            <p className="text-xl text-white/60 max-w-2xl leading-relaxed mb-10">
-              SermonFlow is a complete sermon preparation and presentation
-              platform. Build outlines, integrate scripture, and deliver your
-              message with a distraction-free teleprompter — all in one place.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://presenter.versewell.io"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-navy-900 font-semibold text-base transition-all hover:shadow-lg hover:shadow-gold-500/25"
-              >
-                Open SermonFlow
-                <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-              <Link
-                href="/study"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-white/20 hover:border-white/40 text-white font-medium text-base transition-colors"
-              >
-                See Versewell Study →
-              </Link>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* How it works */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-4">
-              How SermonFlow works
+      {/* Features */}
+      <section className="border-t border-white/5 px-6 py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-16 text-center">
+            <p className="section-label mb-3">Features</p>
+            <h2 className="text-3xl font-bold text-white md:text-4xl">
+              Everything your sermon needs
             </h2>
-            <p className="text-navy-500 text-lg max-w-xl mx-auto">
-              From first draft to final delivery — a simple, focused workflow
-              built around the way pastors actually prepare.
+            <p className="mt-4 text-white/50">
+              A complete toolkit — no juggling between apps.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            {steps.map((s) => (
-              <div key={s.step} className="relative">
-                <div className="text-6xl font-black text-gold-500/15 mb-4 leading-none">
-                  {s.step}
-                </div>
-                <h3 className="text-xl font-semibold text-navy-900 mb-3">{s.title}</h3>
-                <p className="text-navy-500 leading-relaxed">{s.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Grid */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-4">
-              Everything you need to preach well
-            </h2>
-            <p className="text-navy-500 text-lg max-w-xl mx-auto">
-              Every feature in SermonFlow exists to remove friction between you
-              and your message.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid gap-6 md:grid-cols-2">
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="p-6 rounded-2xl border border-gray-100 hover:border-gold-200 hover:shadow-md transition-all group"
+                className="rounded-2xl border border-white/10 bg-white/5 p-8 transition-colors hover:border-white/20"
               >
-                <div className="w-12 h-12 rounded-xl bg-navy-900 text-gold-500 flex items-center justify-center mb-5 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors">
-                  {feature.icon}
-                </div>
-                <h3 className="text-lg font-semibold text-navy-900 mb-2">
+                <div className="mb-4 text-3xl text-blue-400">{feature.icon}</div>
+                <h3 className="mb-3 text-lg font-semibold text-white">
                   {feature.title}
                 </h3>
-                <p className="text-navy-500 text-sm leading-relaxed">
+                <p className="text-sm leading-relaxed text-white/50">
                   {feature.description}
                 </p>
               </div>
@@ -217,24 +137,47 @@ export default function PresenterPage() {
         </div>
       </section>
 
+      {/* How it works */}
+      <section className="border-t border-white/5 px-6 py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-16 text-center">
+            <p className="section-label mb-3">How it works</p>
+            <h2 className="text-3xl font-bold text-white md:text-4xl">
+              From blank page to pulpit
+            </h2>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {steps.map((step) => (
+              <div key={step.step} className="relative">
+                <div className="mb-4 text-4xl font-bold text-white/10">
+                  {step.step}
+                </div>
+                <h3 className="mb-2 font-semibold text-white">{step.title}</h3>
+                <p className="text-sm leading-relaxed text-white/50">
+                  {step.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="py-20 bg-navy-900">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to prepare your next sermon?
+      <section className="border-t border-white/5 px-6 py-24">
+        <div className="mx-auto max-w-3xl rounded-2xl border border-blue-500/20 bg-blue-500/10 p-12 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-white">
+            Ready to level up your sermon prep?
           </h2>
-          <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
-            Join pastors and church leaders using SermonFlow to prepare deeper,
-            more organized messages every week.
+          <p className="mb-8 text-white/60">
+            SermonFlow is waiting for you at presenter.versewell.io. Open it,
+            create your first sermon, and see how much clearer Sunday feels.
           </p>
           <a
             href="https://presenter.versewell.io"
-            className="inline-flex items-center px-8 py-4 rounded-xl bg-gold-500 hover:bg-gold-400 text-navy-900 font-semibold text-base transition-all hover:shadow-lg hover:shadow-gold-500/25"
+            className="btn-primary inline-flex px-10 py-3"
           >
-            Open SermonFlow
-            <svg className="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
+            Go to App →
           </a>
         </div>
       </section>

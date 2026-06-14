@@ -1,155 +1,153 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Versewell — Powerful Tools Built for Ministry",
-  description:
-    "Versewell builds powerful, beautiful tools for the modern church — SermonFlow for sermon presentation and Versewell Study for deep Bible study.",
+  title: "Versewell — Powerful tools built for ministry",
 };
 
 const products = [
   {
+    id: "presenter",
+    href: "/presenter",
+    externalHref: "https://presenter.versewell.io",
+    label: "Sermon Preparation & Presentation",
     name: "SermonFlow",
     tagline: "Craft and present sermons with confidence",
     description:
-      "A complete sermon preparation and presentation platform. Build outlines, integrate scripture, and deliver your message with a distraction-free teleprompter mode.",
-    href: "/presenter",
-    cta: "Explore SermonFlow",
-    accent: "from-gold-500/20 to-gold-600/5",
-    iconBg: "bg-gold-500",
+      "A thoughtfully designed workspace for sermon preparation, structuring, and live presentation. From first draft to final delivery, SermonFlow keeps you focused on the message that matters.",
+    color: "from-blue-500/20 to-indigo-500/10",
+    iconBg: "bg-blue-500",
     icon: "✦",
-    features: ["Outline builder", "Teleprompter mode", "Scripture integration", "Audience notes"],
+    features: ["Outline builder", "Teleprompter mode", "Scripture lookup", "Presentation view"],
+    cta: "Explore SermonFlow",
   },
   {
+    id: "study",
+    href: "/study",
+    externalHref: "https://study.versewell.io",
+    label: "Bible Study & Discipleship",
     name: "Versewell Study",
     tagline: "Deep Bible study, beautifully organized",
     description:
-      "A modern Bible study environment built for serious students of scripture. Reading plans, cross-reference tools, personal annotations, and community discussion — all in one place.",
-    href: "/study",
-    cta: "Explore Study",
-    accent: "from-blue-500/20 to-blue-600/5",
-    iconBg: "bg-blue-500",
-    icon: "✦",
-    features: ["Reading plans", "Study notes", "Cross-references", "Community discussion"],
-  },
-];
-
-const values = [
-  {
-    title: "Built for focus",
-    description:
-      "Every interface decision we make is about removing friction so you can spend more time on what matters — the message.",
-  },
-  {
-    title: "Scripture-first",
-    description:
-      "The Bible is at the center of everything we build. Scripture integration is never an afterthought.",
-  },
-  {
-    title: "Ministry-grade reliability",
-    description:
-      "Whether you're presenting on Sunday morning or studying at midnight, our tools are there when you need them.",
+      "Tools for serious students of Scripture. Reading plans, layered annotations, cross-references, and community discussion — everything you need to go deeper in the Word.",
+    color: "from-gold-500/20 to-amber-500/10",
+    iconBg: "bg-gold-500",
+    icon: "✧",
+    features: ["Reading plans", "Study notes", "Cross-references", "Community"],
+    cta: "Explore Versewell Study",
   },
 ];
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-navy-950">
       <Nav />
 
       {/* Hero */}
-      <section className="relative bg-navy-900 pt-32 pb-24 overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-gold-500/5 blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-blue-500/5 blur-3xl" />
+      <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-16 text-center">
+        {/* Background glow */}
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+          <div className="h-[600px] w-[600px] rounded-full bg-gold-500/5 blur-[120px]" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/20 mb-8">
-            <span className="text-gold-500 text-xs font-semibold uppercase tracking-wider">
-              Now in early access
+        <div className="relative z-10 max-w-4xl">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold-500/30 bg-gold-500/10 px-4 py-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-gold-500" />
+            <span className="text-xs font-semibold text-gold-400 uppercase tracking-wider">
+              Built for ministry leaders
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
-            Powerful tools built
-            <br />
-            <span className="text-gold-500">for ministry</span>
+          <h1 className="mb-6 text-5xl font-bold leading-tight text-white md:text-7xl">
+            Powerful tools{" "}
+            <span className="text-gold-500">built for ministry</span>
           </h1>
 
-          <p className="text-xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed">
-            Versewell is a suite of purpose-built tools for church leaders,
-            pastors, and Bible students — designed to help you prepare deeply
-            and communicate clearly.
+          <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-white/60">
+            Versewell creates focused, beautiful software for pastors, teachers,
+            and students of the Word — so you can spend less time on logistics
+            and more time on what matters.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/presenter"
-              className="inline-flex items-center px-6 py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-navy-900 font-semibold text-base transition-all hover:shadow-lg hover:shadow-gold-500/25"
-            >
-              Explore SermonFlow
-              <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link href="/presenter" className="btn-primary px-8 py-3 text-sm">
+              Explore SermonFlow →
             </Link>
-            <Link
-              href="/study"
-              className="inline-flex items-center px-6 py-3 rounded-xl border border-white/20 hover:border-white/40 text-white font-medium text-base transition-all"
-            >
+            <Link href="/study" className="btn-secondary px-8 py-3 text-sm">
               Explore Study App
             </Link>
           </div>
         </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
+          <div className="flex h-8 w-5 items-start justify-center rounded-full border border-white/20 p-1">
+            <div className="h-2 w-0.5 animate-bounce rounded-full bg-white/40" />
+          </div>
+        </div>
       </section>
 
-      {/* Product Cards */}
-      <section className="bg-navy-900 pb-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {/* Products */}
+      <section className="px-6 py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-16 text-center">
+            <p className="section-label mb-3">Our products</p>
+            <h2 className="text-3xl font-bold text-white md:text-4xl">
+              Two tools. One mission.
+            </h2>
+            <p className="mt-4 text-white/50">
+              Each product is purpose-built for a specific need in the ministry
+              lifecycle.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2">
             {products.map((product) => (
               <Link
-                key={product.name}
+                key={product.id}
                 href={product.href}
-                className="group relative rounded-2xl border border-white/10 bg-white/5 hover:bg-white/8 p-8 transition-all hover:border-white/20 hover:shadow-xl hover:shadow-black/20"
+                className={`group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br ${product.color} p-8 transition-all hover:border-white/20 hover:scale-[1.01]`}
               >
-                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${product.accent} opacity-0 group-hover:opacity-100 transition-opacity`} />
-
-                <div className="relative">
-                  <div className={`w-10 h-10 rounded-xl ${product.iconBg} flex items-center justify-center mb-6`}>
-                    <span className="text-white text-lg">{product.icon}</span>
+                <div className="mb-4 flex items-center gap-3">
+                  <div
+                    className={`flex h-10 w-10 items-center justify-center rounded-xl ${product.iconBg} text-lg`}
+                  >
+                    {product.icon}
                   </div>
-
-                  <h2 className="text-2xl font-bold text-white mb-2">
-                    {product.name}
-                  </h2>
-                  <p className="text-gold-400 font-medium text-sm mb-4">
-                    {product.tagline}
-                  </p>
-                  <p className="text-white/60 text-base leading-relaxed mb-8">
-                    {product.description}
-                  </p>
-
-                  <div className="grid grid-cols-2 gap-2 mb-8">
-                    {product.features.map((feature) => (
-                      <div key={feature} className="flex items-center gap-2">
-                        <svg className="w-4 h-4 text-gold-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span className="text-white/70 text-sm">{feature}</span>
-                      </div>
-                    ))}
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wider text-white/50">
+                      {product.label}
+                    </p>
+                    <h3 className="font-bold text-white text-xl">
+                      {product.name}
+                    </h3>
                   </div>
+                </div>
 
-                  <div className="flex items-center text-white font-medium text-sm group-hover:text-gold-400 transition-colors">
-                    {product.cta}
-                    <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </div>
+                <p className="mb-4 text-lg font-semibold text-white">
+                  {product.tagline}
+                </p>
+
+                <p className="mb-6 text-sm leading-relaxed text-white/60">
+                  {product.description}
+                </p>
+
+                <div className="mb-6 flex flex-wrap gap-2">
+                  {product.features.map((f) => (
+                    <span
+                      key={f}
+                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/60"
+                    >
+                      {f}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex items-center gap-1 text-sm font-semibold text-gold-400 group-hover:gap-2 transition-all">
+                  {product.cta}
+                  <span>→</span>
                 </div>
               </Link>
             ))}
@@ -157,57 +155,66 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-4">
-              Why Versewell?
+      {/* Why Versewell */}
+      <section className="border-t border-white/5 px-6 py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-16 text-center">
+            <p className="section-label mb-3">Our approach</p>
+            <h2 className="text-3xl font-bold text-white md:text-4xl">
+              Software with a deeper purpose
             </h2>
-            <p className="text-navy-500 text-lg max-w-2xl mx-auto">
-              Ministry tools should be as thoughtfully crafted as the work they
-              support. Here&apos;s what guides everything we build.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {values.map((value, i) => (
-              <div key={i} className="relative">
-                <div className="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center mb-5">
-                  <span className="text-gold-500 font-bold text-lg">{i + 1}</span>
-                </div>
-                <h3 className="text-xl font-semibold text-navy-900 mb-3">
-                  {value.title}
-                </h3>
-                <p className="text-navy-500 leading-relaxed">{value.description}</p>
+          <div className="grid gap-8 md:grid-cols-3">
+            {[
+              {
+                icon: "◈",
+                title: "Focused by design",
+                body: "Every feature earns its place. We build tools that help you concentrate on the work of ministry, not the mechanics of software.",
+              },
+              {
+                icon: "◉",
+                title: "Built for real workflows",
+                body: "Shaped by the actual rhythms of pastors and teachers — Sunday preparation cycles, weekly study, and long-term discipleship.",
+              },
+              {
+                icon: "◎",
+                title: "Beautiful and accessible",
+                body: "Great design isn't a luxury. Clarity and beauty help you stay present to what you're preparing — and help your congregation receive it.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-xl border border-white/10 bg-white/5 p-6"
+              >
+                <div className="mb-4 text-2xl text-gold-500">{item.icon}</div>
+                <h3 className="mb-2 font-semibold text-white">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-white/50">
+                  {item.body}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section className="py-20 bg-navy-900">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to elevate your ministry?
+      {/* CTA */}
+      <section className="px-6 py-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
+            Ready to transform your ministry workflow?
           </h2>
-          <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
-            Join ministry leaders who are using Versewell tools to prepare
-            better sermons and go deeper in God&apos;s word.
+          <p className="mb-8 text-white/50">
+            Start with SermonFlow for your sermon preparation, or dive into
+            Versewell Study for deeper Scripture engagement. Both are built to
+            serve the mission.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/presenter"
-              className="inline-flex items-center px-8 py-4 rounded-xl bg-gold-500 hover:bg-gold-400 text-navy-900 font-semibold text-base transition-all hover:shadow-lg hover:shadow-gold-500/25"
-            >
-              Get started with SermonFlow
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link href="/presenter" className="btn-primary px-8 py-3">
+              Start with SermonFlow
             </Link>
-            <Link
-              href="/study"
-              className="inline-flex items-center px-8 py-4 rounded-xl border border-white/20 hover:border-white/40 text-white font-medium text-base transition-colors"
-            >
-              Try Versewell Study
+            <Link href="/study" className="btn-secondary px-8 py-3">
+              Start with Study
             </Link>
           </div>
         </div>

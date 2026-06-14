@@ -1,20 +1,125 @@
 export default function App() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", background: "#0F1B2D", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", color: "white" }}>
-      <div style={{ textAlign: "center", maxWidth: 480, padding: "0 24px" }}>
-        <div style={{ fontSize: 12, letterSpacing: "0.15em", textTransform: "uppercase", color: "#60A5FA", fontWeight: 600, marginBottom: 16 }}>
-          Versewell Study
-        </div>
-        <h1 style={{ fontSize: 40, fontWeight: 800, marginBottom: 16, lineHeight: 1.2 }}>
-          Coming soon
-        </h1>
-        <p style={{ color: "rgba(255,255,255,0.6)", fontSize: 18, lineHeight: 1.6, marginBottom: 32 }}>
-          The full Versewell Study app is on its way. Replace this placeholder with your app code.
-        </p>
-        <a href="https://versewell.io/study" style={{ color: "#60A5FA", textDecoration: "none", fontSize: 14 }}>
-          ← Back to Study overview
-        </a>
+    <div
+      style={{
+        minHeight: "100vh",
+        background: "#0F1B2D",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        fontFamily:
+          "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif",
+        padding: "2rem",
+        textAlign: "center",
+      }}
+    >
+      <div
+        style={{
+          width: "56px",
+          height: "56px",
+          borderRadius: "16px",
+          background: "#F59E0B",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontSize: "1.5rem",
+          fontWeight: "bold",
+          color: "#0F1B2D",
+          marginBottom: "1.5rem",
+        }}
+      >
+        V
       </div>
+
+      <h1
+        style={{
+          color: "white",
+          fontSize: "2.5rem",
+          fontWeight: "700",
+          margin: "0 0 0.5rem",
+          lineHeight: "1.2",
+        }}
+      >
+        Versewell Study
+      </h1>
+
+      <p
+        style={{
+          color: "rgba(255,255,255,0.5)",
+          fontSize: "0.875rem",
+          fontWeight: "600",
+          textTransform: "uppercase",
+          letterSpacing: "0.1em",
+          margin: "0 0 1.5rem",
+        }}
+      >
+        study.versewell.io
+      </p>
+
+      <div
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          gap: "0.5rem",
+          background: "rgba(245,158,11,0.15)",
+          border: "1px solid rgba(245,158,11,0.3)",
+          borderRadius: "9999px",
+          padding: "0.5rem 1rem",
+          marginBottom: "2rem",
+        }}
+      >
+        <span
+          style={{
+            width: "6px",
+            height: "6px",
+            borderRadius: "50%",
+            background: "#F59E0B",
+          }}
+        />
+        <span
+          style={{
+            color: "#FCD34D",
+            fontSize: "0.75rem",
+            fontWeight: "600",
+            textTransform: "uppercase",
+            letterSpacing: "0.1em",
+          }}
+        >
+          Under Construction
+        </span>
+      </div>
+
+      <p
+        style={{
+          color: "rgba(255,255,255,0.6)",
+          maxWidth: "420px",
+          lineHeight: "1.6",
+          marginBottom: "2.5rem",
+        }}
+      >
+        Versewell Study is the Bible study tool for serious students of
+        Scripture. Reading plans, layered annotations, cross-references, and
+        community discussion — coming soon.
+      </p>
+
+      <a
+        href="https://versewell.io/study"
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          gap: "0.5rem",
+          background: "#F59E0B",
+          color: "#0F1B2D",
+          padding: "0.75rem 1.5rem",
+          borderRadius: "8px",
+          textDecoration: "none",
+          fontWeight: "600",
+          fontSize: "0.875rem",
+        }}
+      >
+        Learn more at versewell.io →
+      </a>
     </div>
   );
 }

@@ -1,74 +1,38 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Versewell Study — Deep Bible Study, Beautifully Organized",
   description:
-    "Versewell Study is a modern Bible study environment with reading plans, cross-reference tools, personal annotations, and community discussion.",
+    "Versewell Study is the Bible study tool for serious students of Scripture. Reading plans, layered annotations, cross-references, and community discussion.",
 };
 
 const features = [
   {
-    title: "Reading Plans",
+    icon: "◉",
+    title: "Bible Reading Plans",
     description:
-      "Follow curated reading plans or build your own. Track your progress, get daily reminders, and never lose your place in your study journey.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-      </svg>
-    ),
+      "Follow structured reading plans designed for individuals, small groups, and congregations. Track your progress, stay consistent, and receive gentle reminders that keep you engaged day after day.",
   },
   {
-    title: "Study Notes",
+    icon: "✧",
+    title: "Study Notes & Annotations",
     description:
-      "Highlight, annotate, and write study notes directly on any verse. Your notes are organized and searchable so you can build on them over time.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-      </svg>
-    ),
+      "Layer your own insights directly onto the text. Highlight, underline, and write notes that stay attached to the passage. Your notes build into a personal commentary over years of study.",
   },
   {
+    icon: "◎",
     title: "Cross-Reference Tools",
     description:
-      "Explore how scripture speaks to scripture. Cross-reference tools surface related verses, parallel passages, and thematic connections instantly.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-      </svg>
-    ),
+      "Surface thematic connections across the whole canon. Click any verse to see where related themes, prophecies, and echoes appear elsewhere in Scripture — and follow the thread wherever it leads.",
   },
   {
-    title: "Multiple Translations",
-    description:
-      "Read and compare across dozens of Bible translations side by side. Switch versions with a single tap to deepen your understanding of any passage.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-      </svg>
-    ),
-  },
-  {
+    icon: "❖",
     title: "Community Discussion",
     description:
-      "Study with others. Join passage discussions, share insights, and learn from how your church community interprets and applies scripture.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Organized Collections",
-    description:
-      "Group verses, notes, and passages into named collections by topic, series, or season. Your study library grows with you.",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-      </svg>
-    ),
+      "Study together. Share reflections on passages, respond to others' insights, and see how your community is engaging with the same text. Iron sharpening iron, at your own pace.",
   },
 ];
 
@@ -76,140 +40,96 @@ const steps = [
   {
     step: "01",
     title: "Choose your plan",
-    description:
-      "Select from curated reading plans for beginners through advanced students, or create a custom plan around a book, theme, or passage series.",
+    body: "Select a reading plan that fits your season — chronological, topical, book-by-book, or a custom track. Start at any time.",
   },
   {
     step: "02",
-    title: "Read, highlight, annotate",
-    description:
-      "Open any passage and study deeply. Highlight key verses, write study notes, explore cross-references, and compare translations — all inline.",
+    title: "Read and reflect",
+    body: "Open the day's passage in a clean, distraction-free reading environment. Multiple translations available at a tap.",
   },
   {
     step: "03",
-    title: "Connect with community",
-    description:
-      "Share insights with your church group or study circle. Discuss passages together, ask questions, and grow through collective understanding.",
+    title: "Annotate and connect",
+    body: "Highlight key verses, add your reflections, and explore cross-references that deepen your understanding of the text.",
+  },
+  {
+    step: "04",
+    title: "Share and discuss",
+    body: "Post a reflection to your community, respond to others, and grow together through the Word.",
   },
 ];
 
 export default function StudyPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-navy-950">
       <Nav />
 
       {/* Hero */}
-      <section className="relative bg-navy-900 pt-32 pb-24 overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] rounded-full bg-blue-500/5 blur-3xl" />
+      <section className="relative overflow-hidden px-6 pb-24 pt-32 text-center">
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+          <div className="h-[500px] w-[800px] rounded-full bg-gold-500/5 blur-[120px]" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 text-white/40 hover:text-white/70 text-sm mb-8 transition-colors"
+        <div className="relative z-10 mx-auto max-w-4xl">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold-500/30 bg-gold-500/10 px-4 py-2">
+            <div className="flex h-5 w-5 items-center justify-center rounded bg-gold-500 text-xs font-bold text-navy-950">
+              V
+            </div>
+            <span className="text-xs font-semibold text-gold-400 uppercase tracking-wider">
+              Versewell Study
+            </span>
+          </div>
+
+          <h1 className="mb-6 text-5xl font-bold leading-tight text-white md:text-7xl">
+            Deep Bible study,{" "}
+            <span className="text-gold-500">beautifully organized</span>
+          </h1>
+
+          <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-white/60">
+            Versewell Study gives serious students of Scripture the tools to go
+            deeper — without the complexity. Clean reading experience, powerful
+            annotation, and community built right in.
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="https://study.versewell.io"
+              className="btn-primary px-8 py-3 text-sm"
             >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-              </svg>
-              Versewell
+              Go to App →
+            </a>
+            <Link href="/" className="btn-secondary px-8 py-3 text-sm">
+              ← Back to Versewell
             </Link>
-
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
-              <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-              <span className="text-blue-400 text-xs font-semibold uppercase tracking-wider">
-                Versewell Study
-              </span>
-            </div>
-
-            <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
-              Deep Bible study,
-              <br />
-              <span className="text-blue-400">beautifully organized</span>
-            </h1>
-
-            <p className="text-xl text-white/60 max-w-2xl leading-relaxed mb-10">
-              Versewell Study is a modern Bible study environment built for
-              serious students of scripture. Reading plans, cross-reference
-              tools, personal annotations, and community discussion — all in one
-              place.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://study.versewell.io"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-blue-500 hover:bg-blue-400 text-white font-semibold text-base transition-all hover:shadow-lg hover:shadow-blue-500/25"
-              >
-                Open Versewell Study
-                <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-              <Link
-                href="/presenter"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-xl border border-white/20 hover:border-white/40 text-white font-medium text-base transition-colors"
-              >
-                See SermonFlow →
-              </Link>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* How it works */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-4">
-              How Versewell Study works
+      {/* Features */}
+      <section className="border-t border-white/5 px-6 py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-16 text-center">
+            <p className="section-label mb-3">Features</p>
+            <h2 className="text-3xl font-bold text-white md:text-4xl">
+              Built for every kind of student
             </h2>
-            <p className="text-navy-500 text-lg max-w-xl mx-auto">
-              A simple, distraction-free flow designed to help you go deeper in
-              God&apos;s word — whether you&apos;re studying alone or with others.
+            <p className="mt-4 text-white/50">
+              Whether you&apos;re a daily reader, a small group leader, or a
+              lifelong learner — Versewell Study meets you where you are.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            {steps.map((s) => (
-              <div key={s.step} className="relative">
-                <div className="text-6xl font-black text-blue-500/15 mb-4 leading-none">
-                  {s.step}
-                </div>
-                <h3 className="text-xl font-semibold text-navy-900 mb-3">{s.title}</h3>
-                <p className="text-navy-500 leading-relaxed">{s.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Grid */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 mb-4">
-              Tools for serious students of scripture
-            </h2>
-            <p className="text-navy-500 text-lg max-w-xl mx-auto">
-              Everything you need to study deeply, remember what you learn, and
-              grow in community.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid gap-6 md:grid-cols-2">
             {features.map((feature) => (
               <div
                 key={feature.title}
-                className="p-6 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all group"
+                className="rounded-2xl border border-white/10 bg-white/5 p-8 transition-colors hover:border-white/20"
               >
-                <div className="w-12 h-12 rounded-xl bg-navy-900 text-blue-400 flex items-center justify-center mb-5 group-hover:bg-blue-500 group-hover:text-white transition-colors">
-                  {feature.icon}
-                </div>
-                <h3 className="text-lg font-semibold text-navy-900 mb-2">
+                <div className="mb-4 text-3xl text-gold-500">{feature.icon}</div>
+                <h3 className="mb-3 text-lg font-semibold text-white">
                   {feature.title}
                 </h3>
-                <p className="text-navy-500 text-sm leading-relaxed">
+                <p className="text-sm leading-relaxed text-white/50">
                   {feature.description}
                 </p>
               </div>
@@ -218,24 +138,58 @@ export default function StudyPage() {
         </div>
       </section>
 
+      {/* How it works */}
+      <section className="border-t border-white/5 px-6 py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-16 text-center">
+            <p className="section-label mb-3">How it works</p>
+            <h2 className="text-3xl font-bold text-white md:text-4xl">
+              A rhythm that fits your life
+            </h2>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {steps.map((step) => (
+              <div key={step.step} className="relative">
+                <div className="mb-4 text-4xl font-bold text-white/10">
+                  {step.step}
+                </div>
+                <h3 className="mb-2 font-semibold text-white">{step.title}</h3>
+                <p className="text-sm leading-relaxed text-white/50">
+                  {step.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Quote */}
+      <section className="border-t border-white/5 px-6 py-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-2xl font-light italic leading-relaxed text-white/70">
+            &ldquo;Your word is a lamp to my feet and a light to my path.&rdquo;
+          </p>
+          <p className="mt-4 text-sm text-white/30">Psalm 119:105</p>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="py-20 bg-navy-900">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Start studying more deeply today
+      <section className="border-t border-white/5 px-6 py-24">
+        <div className="mx-auto max-w-3xl rounded-2xl border border-gold-500/20 bg-gold-500/10 p-12 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-white">
+            Start studying with clarity today
           </h2>
-          <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
-            Join Bible students and small group leaders using Versewell Study to
-            go deeper in scripture every day.
+          <p className="mb-8 text-white/60">
+            Versewell Study is available now at study.versewell.io. Open a
+            reading plan, annotate your first passage, and discover what it
+            feels like to truly engage with Scripture.
           </p>
           <a
             href="https://study.versewell.io"
-            className="inline-flex items-center px-8 py-4 rounded-xl bg-blue-500 hover:bg-blue-400 text-white font-semibold text-base transition-all hover:shadow-lg hover:shadow-blue-500/25"
+            className="btn-primary inline-flex px-10 py-3"
           >
-            Open Versewell Study
-            <svg className="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
+            Go to App →
           </a>
         </div>
       </section>
